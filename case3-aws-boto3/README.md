@@ -1,5 +1,7 @@
 # Case 3 — AWS Automation with `boto3` (Advanced)
 
+[Home](../README.md) | [1. Basics](../case1-python-basics/README.md) | [2. Intermediate](../case2-intermediate/README.md) | **3. AWS boto3** | [Final Project](../final-project-ebs-cleanup/README.md)
+
 Goal: know how to talk to AWS from Python. This is the bridge between "I know Python
 syntax" and "I can write the Lambda project".
 

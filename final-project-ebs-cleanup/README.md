@@ -1,5 +1,7 @@
 # Final Project — EBS Volume Cleanup Lambda
 
+[Home](../README.md) | [1. Basics](../case1-python-basics/README.md) | [2. Intermediate](../case2-intermediate/README.md) | [3. AWS boto3](../case3-aws-boto3/README.md) | **Final Project**
+
 **Scenario:** When an EC2 instance is terminated, EBS volumes that don't have
 "delete on termination" set are left behind in the `available` (unattached) state,
 silently costing money forever. This Lambda finds those orphaned volumes and deletes

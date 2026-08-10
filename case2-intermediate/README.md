@@ -1,5 +1,7 @@
 # Case 2 — Intermediate Python (Medium)
 
+[Home](../README.md) | [1. Basics](../case1-python-basics/README.md) | **2. Intermediate** | [3. AWS boto3](../case3-aws-boto3/README.md) | [Final Project](../final-project-ebs-cleanup/README.md)
+
 Goal: the concepts you'll actually use in a real automation script — flexible
 functions, comprehensions, error handling, files/JSON, and date math (critical for the
 final project's "delete if older than N days" logic).

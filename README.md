@@ -1,5 +1,7 @@
 # Python for DevOps — Learning Path
 
+**Home** | [1. Basics](case1-python-basics/README.md) | [2. Intermediate](case2-intermediate/README.md) | [3. AWS boto3](case3-aws-boto3/README.md) | [Final Project](final-project-ebs-cleanup/README.md)
+
 This folder is a self-contained crash course to get you ready in Python,
 with a DevOps/AWS angle. It goes from **basic syntax → intermediate concepts → AWS
 automation with boto3 → a final real-world Lambda project**.
