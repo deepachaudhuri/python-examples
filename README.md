@@ -1,6 +1,6 @@
-# Python for DevOps Interview — Learning Path
+# Python for DevOps — Learning Path
 
-This folder is a self-contained crash course to get you interview-ready in Python,
+This folder is a self-contained crash course to get you ready in Python,
 with a DevOps/AWS angle. It goes from **basic syntax → intermediate concepts → AWS
 automation with boto3 → a final real-world Lambda project**.
 
