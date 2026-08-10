@@ -14,11 +14,12 @@ python-examples/
 └── final-project-ebs-cleanup/  → Final Project: Lambda that cleans up stale EBS volumes
 ```
 
-Each folder has its own `README.md` explaining the concepts + a runnable `.py` file
-with example code and comments. Run any file locally with:
+Each folder has its own `README.md` explaining the concepts, with **one small runnable
+`.py` file per concept** (e.g. loops, conditionals, error handling) so you can run and
+tweak each one individually. Run any file locally with:
 
 ```bash
-python case1-python-basics/basics.py
+python case1-python-basics/01_variables_and_datatypes.py
 ```
 
 ---
