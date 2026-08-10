@@ -24,8 +24,11 @@ tweak each one individually. Run any file locally with:
 python case1-python-basics/01_variables_and_datatypes.py
 ```
 
+**Jump to a topic:** [Why Python for DevOps](#why-python) · [Variables & Data Types](#variables-data-types) · [Roadmap](#roadmap) · [Interview cheat sheet](#cheat-sheet)
+
 ---
 
+<a id="why-python"></a>
 ## 1. Why Python for DevOps?
 
 Python is the most common scripting language in DevOps because:
@@ -40,6 +43,7 @@ writing files, and calling AWS APIs. That's exactly what this guide covers.
 
 ---
 
+<a id="variables-data-types"></a>
 ## 2. Variables & Data Types (the absolute basics)
 
 A **variable** is just a name that points to a value in memory. Python is
@@ -68,6 +72,7 @@ That's enough theory — the rest is learned by writing code. Go to
 
 ---
 
+<a id="roadmap"></a>
 ## 3. Roadmap
 
 | Case | Level | Topics | Folder |
@@ -79,6 +84,7 @@ That's enough theory — the rest is learned by writing code. Go to
 
 ---
 
+<a id="cheat-sheet"></a>
 ## 4. What interviewers usually ask (quick cheat sheet)
 
 - Difference between **list, tuple, set, dict** and when to use each.

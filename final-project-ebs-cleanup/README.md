@@ -13,6 +13,9 @@ them once they've been sitting around longer than your retention policy:
 
 Environment and age are both determined from **tags** — no hardcoded volume IDs.
 
+**Jump to a topic:** [Tagging strategy](#tagging-strategy) · [Architecture](#architecture) · [Files](#files) · [Env vars](#env-vars) · [Code walkthrough](#code-walkthrough) · [IAM permissions](#iam-permissions) · [Testing locally](#testing-locally) · [Deploying](#deploying) · [Talking points](#talking-points)
+
+<a id="tagging-strategy"></a>
 ## Tagging strategy (the important design decision)
 
 The Lambda relies on two tags being present on each EBS volume:
@@ -33,6 +36,7 @@ This project uses option 1 for simplicity — it's the realistic, common pattern
 in most orgs (tag-on-termination via a Lambda triggered from an EventBridge rule, or
 tags copied from the instance onto its volumes at creation time).
 
+<a id="architecture"></a>
 ## Architecture
 
 ```mermaid
@@ -45,12 +49,14 @@ flowchart LR
     B --> G[CloudWatch Logs]
 ```
 
+<a id="files"></a>
 ## Files
 
 - [lambda_function.py](lambda_function.py) — the Lambda handler + all logic
 - [requirements.txt](requirements.txt) — only needed for local dev; `boto3` ships
   built into the Lambda runtime already
 
+<a id="env-vars"></a>
 ## Environment variables (configured on the Lambda, not hardcoded)
 
 | Variable | Default | Purpose |
@@ -63,6 +69,7 @@ Always deploy with `DRY_RUN=true` first, check the CloudWatch logs for a few day
 then flip it to `false`. This is a standard, low-risk rollout pattern for anything
 destructive — a good thing to call out in an interview.
 
+<a id="code-walkthrough"></a>
 ## Code walkthrough
 
 1. **`get_stale_volumes()`** — uses a **paginator** on `describe_volumes` (filtered
@@ -80,6 +87,7 @@ destructive — a good thing to call out in an interview.
    candidates, respects `DRY_RUN`, and returns a summary dict (useful for logs/alerts
    and for local testing assertions).
 
+<a id="iam-permissions"></a>
 ## Required IAM permissions (least privilege)
 
 ```json
@@ -109,6 +117,7 @@ destructive — a good thing to call out in an interview.
 The Lambda authenticates via its **execution role** — never hardcode AWS keys in the
 code or environment variables.
 
+<a id="testing-locally"></a>
 ## Testing locally
 
 ```bash
@@ -120,6 +129,7 @@ The `if __name__ == "__main__":` block at the bottom calls `lambda_handler({}, N
 directly, so you can run and debug it exactly like a normal script before ever
 touching the Lambda console.
 
+<a id="deploying"></a>
 ## Deploying
 
 1. Zip it: `zip function.zip lambda_function.py`
@@ -130,6 +140,7 @@ touching the Lambda console.
 5. Watch CloudWatch Logs for a few runs, confirm the "eligible" list looks right,
    then set `DRY_RUN=false`.
 
+<a id="talking-points"></a>
 ## Talking points for the interview
 
 - Why **tags** instead of hardcoded IDs → automation must be generic and safe as

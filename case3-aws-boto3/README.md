@@ -14,6 +14,9 @@ All examples below need valid AWS credentials configured (`aws configure`) and a
 **read-only** except the error-handling one, which intentionally targets a volume ID
 that doesn't exist so nothing real gets deleted.
 
+**Jump to a topic:** [Client vs Resource](#client-vs-resource) · [Tags & filters](#tags-and-filters) · [Pagination](#pagination) · [Error handling](#error-handling-boto3)
+
+<a id="client-vs-resource"></a>
 ## 1. Client vs Resource → [01_client_vs_resource.py](01_client_vs_resource.py)
 ```bash
 python 01_client_vs_resource.py
@@ -35,6 +38,7 @@ python 01_client_vs_resource.py
 the compute (in Lambda, this is the execution role — the standard, secure approach;
 never hardcode credentials).
 
+<a id="tags-and-filters"></a>
 ## 2. Describing resources & filtering by tags → [02_tags_and_filters.py](02_tags_and_filters.py)
 ```bash
 python 02_tags_and_filters.py
@@ -55,6 +59,7 @@ def tags_to_dict(tag_list):
     return {t["Key"]: t["Value"] for t in tag_list or []}
 ```
 
+<a id="pagination"></a>
 ## 3. Pagination → [03_pagination.py](03_pagination.py)
 ```bash
 python 03_pagination.py
@@ -68,6 +73,7 @@ for page in paginator.paginate(Filters=filters):
         ...
 ```
 
+<a id="error-handling-boto3"></a>
 ## 4. Error handling with boto3 → [04_error_handling.py](04_error_handling.py)
 ```bash
 python 04_error_handling.py

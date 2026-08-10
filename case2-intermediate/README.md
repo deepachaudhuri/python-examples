@@ -8,6 +8,9 @@ final project's "delete if older than N days" logic).
 
 Each concept has its own runnable file, same as case 1.
 
+**Jump to a topic:** [`*args`/`**kwargs`](#args-kwargs) · [Comprehensions](#comprehensions) · [Error handling](#error-handling) · [Files & JSON](#files-json) · [datetime](#datetime) · [OOP basics](#oop-basics)
+
+<a id="args-kwargs"></a>
 ## 1. `*args` and `**kwargs` → [01_args_kwargs.py](01_args_kwargs.py)
 ```bash
 python 01_args_kwargs.py
@@ -21,6 +24,7 @@ def delete_volumes(*volume_ids, dry_run=True, **extra_options):
 - `**kwargs` collects any extra **keyword** args into a dict.
 - Useful when a function needs to stay flexible as callers pass more options over time.
 
+<a id="comprehensions"></a>
 ## 2. List / dict comprehensions → [02_comprehensions.py](02_comprehensions.py)
 ```bash
 python 02_comprehensions.py
@@ -33,6 +37,7 @@ volume_by_id = {v["VolumeId"]: v for v in volumes}
 Readable and idiomatic — interviewers like seeing this instead of manual for-loops
 with `.append()`.
 
+<a id="error-handling"></a>
 ## 3. Error handling (`try/except/else/finally`) → [03_error_handling.py](03_error_handling.py)
 ```bash
 python 03_error_handling.py
@@ -52,6 +57,7 @@ finally:
 - `finally` always runs — good for cleanup/logging regardless of success or failure.
 - You can also define and raise your own errors, e.g. `class MissingTagError(Exception)`.
 
+<a id="files-json"></a>
 ## 4. Files & JSON → [04_files_json.py](04_files_json.py)
 ```bash
 python 04_files_json.py
@@ -66,6 +72,7 @@ with open("report.json", "w") as f:
 `json.load`/`json.dump` convert between JSON text and Python dicts/lists — this is how
 you'd read a config file or write a cleanup report to disk.
 
+<a id="datetime"></a>
 ## 5. `datetime` and `timedelta` → [05_datetime.py](05_datetime.py)
 ```bash
 python 05_datetime.py
@@ -81,6 +88,7 @@ This is exactly how the final project decides if an EBS volume has been "orphane
 long enough to be deleted. Also covers `datetime.strptime()` for parsing a date stored
 as plain text in a tag (e.g. `"2026-07-01"`).
 
+<a id="oop-basics"></a>
 ## 6. A tiny bit of OOP → [06_oop_basics.py](06_oop_basics.py)
 ```bash
 python 06_oop_basics.py

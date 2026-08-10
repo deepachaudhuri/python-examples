@@ -8,6 +8,9 @@ conditionals, loops, functions, and the core collections (`list`, `dict`, `tuple
 Each concept below has its own small, runnable file so you can experiment with one
 thing at a time instead of one giant script.
 
+**Jump to a topic:** [Variables & data types](#variables) · [Operators](#operators) · [Conditionals](#conditionals) · [Loops](#loops) · [Functions](#functions) · [Collections](#collections)
+
+<a id="variables"></a>
 ## 1. Variables & data types → [01_variables_and_datatypes.py](01_variables_and_datatypes.py)
 ```bash
 python 01_variables_and_datatypes.py
@@ -19,6 +22,7 @@ you (dynamically typed) — no need to declare `int x = 5` like in Java/C#.
 - `None` means "no value" — common for a tag that might not exist:
   `deleted_date = tags.get("DeletedDate")  # None if the tag isn't set`
 
+<a id="operators"></a>
 ## 2. Operators → [02_operators.py](02_operators.py)
 ```bash
 python 02_operators.py
@@ -28,6 +32,7 @@ python 02_operators.py
 - **Logical**: `and or not` → combine multiple `bool` conditions, e.g.
   `environment == "prod" and days_old > 30`
 
+<a id="conditionals"></a>
 ## 3. Conditionals (`if` / `elif` / `else`) → [03_conditionals.py](03_conditionals.py)
 ```bash
 python 03_conditionals.py
@@ -46,6 +51,7 @@ else:
 - Conditions can be nested (an `if` inside another `if`) for multi-step logic, like
   "if prod, then check if it's past retention".
 
+<a id="loops"></a>
 ## 4. Loops (`for` / `while`) → [04_loops.py](04_loops.py)
 ```bash
 python 04_loops.py
@@ -66,6 +72,7 @@ while count < 3:                # loop while a condition stays True
 - `break` exits the loop immediately; `continue` skips to the next iteration.
 - `enumerate(list)` gives you both the index and the value when you need both.
 
+<a id="functions"></a>
 ## 5. Functions → [05_functions.py](05_functions.py)
 ```bash
 python 05_functions.py
@@ -79,6 +86,7 @@ def greet(name):
   optionally override a value.
 - Functions can return more than a plain value — e.g. a `dict` summarizing a result.
 
+<a id="collections"></a>
 ## 6. Collections (`list`, `tuple`, `dict`, `set`) → [06_collections.py](06_collections.py)
 ```bash
 python 06_collections.py
